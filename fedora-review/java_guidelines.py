@@ -1,4 +1,5 @@
-#-*- coding: utf-8 -*-
+#    -*- coding: utf-8 -*-
+
 """Java language plugin for fedora-review
 
 This plugin aims to implement Fedora Packaging Guidelines for Java[1]
@@ -19,6 +20,7 @@ class Registry(RegistryBase):
     def is_applicable(self):
         """ Use the is_applicable() defined in main group: """
         return self.checks.groups['Java'].is_applicable()
+
 
 class JavaCheckBase(CheckBase):
     """Base check for Java checks"""
