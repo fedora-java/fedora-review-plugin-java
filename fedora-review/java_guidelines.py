@@ -109,9 +109,10 @@ class CheckJavadoc(JavaCheckBase):
         """ run check for java packages """
         pkg = self._get_javadoc_sub()
         if not pkg:
-            self.set_passed(self.FAIL, "No javadoc subpackage present. "
-                                       "Note: Javadocs are optional for Fedora "
-                                       "versions >= 21")
+            self.set_passed(self.FAIL,
+                            "No javadoc subpackage present. "
+                            "Note: Javadocs are optional for Fedora "
+                            "versions >= 21")
             return
 
         # and now look for at least one html file
@@ -362,7 +363,7 @@ class CheckTestSkip(JavaCheckBase):
         # but it either won't work with --prebuilt (Mock) or can easily fail
         # when package providing %mvn_build macro is not installed locally
         xmvn_skip_regex = re.compile(r'mvn-build\s+.*(-f|--force|'
-                                      '--skip-tests).*')
+                                     '--skip-tests).*')
         build_section = self.spec.get_section('%build', raw=True)
         if build_section and (skip_regex.search(build_section) or
                               xmvn_skip_regex.search(build_section)):
@@ -379,8 +380,8 @@ class CheckMvnRpmbuild(JavaCheckBase):
     def __init__(self, base):
         JavaCheckBase.__init__(self, base)
         self.url = 'https://fedoraproject.org/wiki/Packaging:Java'
-        self.text = "mvn-rpmbuild is deprecated and will be removed in future " \
-                    "releases"
+        self.text = "mvn-rpmbuild is deprecated and will be removed in " \
+                    "future releases"
         self.automatic = True
         self.type = 'MUST'
 
