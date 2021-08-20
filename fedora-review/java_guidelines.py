@@ -5,7 +5,7 @@
 This plugin aims to implement Fedora Packaging Guidelines for Java[1]
 as a fedora-review plugin.
 
-[1] https://fedoraproject.org/wiki/Packaging:Java
+[1] https://docs.fedoraproject.org/en-US/packaging-guidelines/Java/
 """
 
 import re
@@ -99,8 +99,8 @@ class CheckJavadoc(JavaCheckBase):
 
     def __init__(self, base):
         JavaCheckBase.__init__(self, base)
-        self.url = 'https://fedoraproject.org/wiki/Packaging:Java' \
-                   '#Javadoc_installation'
+        self.url = 'https://docs.fedoraproject.org/en-US/packaging-guidelines/Java/' \
+                   '#_javadoc_installation'
         self.text = "Javadoc documentation files are generated and " \
                     "included in -javadoc subpackage"
         self.automatic = True
@@ -127,8 +127,8 @@ class CheckJavadocdirName(JavaCheckBase):
 
     def __init__(self, base):
         JavaCheckBase.__init__(self, base)
-        self.url = 'https://fedoraproject.org/wiki/Packaging:Java' \
-                   '#Javadoc_installation'
+        self.url = 'https://docs.fedoraproject.org/en-US/packaging-guidelines/Java/' \
+                   '#_javadoc_installation'
         self.text = "Javadocs are placed in %{_javadocdir}/%{name} " \
                     "(no -%{version} symlink)"
         self.automatic = True
@@ -163,7 +163,7 @@ class CheckJPackageRequires(JavaCheckBase):
 
     def __init__(self, base):
         JavaCheckBase.__init__(self, base)
-        self.url = 'https://fedoraproject.org/wiki/Packaging:Java'
+        self.url = 'https://docs.fedoraproject.org/en-US/packaging-guidelines/Java/'
         self.text = "Packages have proper BuildRequires/Requires on " \
                     "javapackages-tools (jpackage-utils)"
         self.automatic = True
@@ -191,7 +191,7 @@ class CheckJavadocJPackageRequires(JavaCheckBase):
 
     def __init__(self, base):
         JavaCheckBase.__init__(self, base)
-        self.url = 'https://fedoraproject.org/wiki/Packaging:Java'
+        self.url = 'https://docs.fedoraproject.org/en-US/packaging-guidelines/Java/'
         self.text = "Javadoc subpackages should not have Requires: " \
                     "javapackages-tools (jpackage-utils)"
         self.automatic = True
@@ -220,8 +220,8 @@ class CheckNoOldMavenDepmap(JavaCheckBase):
 
     def __init__(self, base):
         JavaCheckBase.__init__(self, base)
-        self.url = 'https://fedoraproject.org/wiki/Packaging:Java' \
-                   '#Maven_pom.xml_files'
+        self.url = 'https://docs.fedoraproject.org/en-US/packaging-guidelines/Java/' \
+                   '#_maven_pom_xml_files'
         self.text = 'Old add_to_maven_depmap macro is not being used'
         self.automatic = True
         self.type = 'MUST'
@@ -238,8 +238,8 @@ class CheckAddMavenDepmap(JavaCheckBase):
 
     def __init__(self, base):
         JavaCheckBase.__init__(self, base)
-        self.url = 'https://fedoraproject.org/wiki/Packaging:Java' \
-                   '#Maven_pom.xml_files'
+        self.url = 'https://docs.fedoraproject.org/en-US/packaging-guidelines/Java/' \
+                   '#_maven_pom_xml_files'
         self.text = 'POM files have correct Maven mapping'
         self.automatic = True
         self.type = 'MUST'
@@ -266,8 +266,8 @@ class CheckUseMavenpomdirMacro(JavaCheckBase):
 
     def __init__(self, base):
         JavaCheckBase.__init__(self, base)
-        self.url = 'https://fedoraproject.org/wiki/Packaging:Java' \
-                   '#Maven_pom.xml_files'
+        self.url = 'https://docs.fedoraproject.org/en-US/packaging-guidelines/Java/' \
+                   '#_maven_pom_xml_files'
         self.text = 'Packages use .mfiles file list instead of ' \
                     '%{_datadir}/maven2/poms'
         self.automatic = True
@@ -287,8 +287,8 @@ class CheckUpdateDepmap(JavaCheckBase):
 
     def __init__(self, base):
         JavaCheckBase.__init__(self, base)
-        self.url = 'https://fedoraproject.org/wiki/Packaging:Java' \
-                   '#Maven_pom.xml_files'
+        self.url = 'https://docs.fedoraproject.org/en-US/packaging-guidelines/Java/' \
+                   '#_maven_pom_xml_files'
         self.text = 'Package DOES NOT use %update_maven_depmap in ' \
                     '%post/%postun'
         self.automatic = True
@@ -309,7 +309,7 @@ class CheckNoRequiresPost(JavaCheckBase):
 
     def __init__(self, base):
         JavaCheckBase.__init__(self, base)
-        self.url = 'https://fedoraproject.org/wiki/Packaging:Java'
+        self.url = 'https://docs.fedoraproject.org/en-US/packaging-guidelines/Java/'
         self.text = "Packages DO NOT have Requires(post) and " \
                     "Requires(postun) on jpackage-utils for " \
                     "%update_maven_depmap macro"
@@ -350,7 +350,7 @@ class CheckTestSkip(JavaCheckBase):
 
     def __init__(self, base):
         JavaCheckBase.__init__(self, base)
-        self.url = 'https://fedoraproject.org/wiki/Packaging:Java'
+        self.url = 'https://docs.fedoraproject.org/en-US/packaging-guidelines/Java/'
         self.text = 'If tests are skipped during package build explain' \
                     ' why it was needed in a comment'
         self.automatic = True
@@ -379,7 +379,7 @@ class CheckMvnRpmbuild(JavaCheckBase):
 
     def __init__(self, base):
         JavaCheckBase.__init__(self, base)
-        self.url = 'https://fedoraproject.org/wiki/Packaging:Java'
+        self.url = 'https://docs.fedoraproject.org/en-US/packaging-guidelines/Java/'
         self.text = "mvn-rpmbuild is deprecated and will be removed in " \
                     "future releases"
         self.automatic = True
@@ -399,8 +399,8 @@ class CheckBundledJars(JavaCheckBase):
 
     def __init__(self, base):
         JavaCheckBase.__init__(self, base)
-        self.url = 'http://fedoraproject.org/wiki/Packaging:Java' \
-                   '#Pre-built_JAR_files_.2F_Other_bundled_software'
+        self.url = 'https://docs.fedoraproject.org/en-US/packaging-guidelines/Java/' \
+                   '#_pre_built_dependencies'
         self.text = """If source tarball includes bundled JAR/class
         files these need to be removed prior to building"""
         self.automatic = False
@@ -413,8 +413,8 @@ class JarFilename(JavaCheckBase):
     def __init__(self, base):
         JavaCheckBase.__init__(self, base)
         self.text = "JAR files are named and installed according to guidelines"
-        self.url = 'https://fedoraproject.org/wiki/Packaging:Java' \
-                   '#JAR_file_installation'
+        self.url = 'https://docs.fedoraproject.org/en-US/packaging-guidelines/Java/' \
+                   '#_jar_file_installation'
         self.automatic = False
         self.type = 'MUST'
 
@@ -427,8 +427,8 @@ class CheckPomInstalled(JavaCheckBase):
         JavaCheckBase.__init__(self, base)
         self.text = "If package contains pom.xml files install it " \
                     "(including metadata) even when building with ant"
-        self.url = 'https://fedoraproject.org/wiki/Packaging:Java' \
-                   '#Maven_pom.xml_files'
+        self.url = 'https://docs.fedoraproject.org/en-US/packaging-guidelines/Java/' \
+                   '#_maven_pom_xml_files'
         self.automatic = False
         self.type = 'MUST'
 
@@ -439,7 +439,7 @@ class CheckUpstremBuildMethod(JavaCheckBase):
     def __init__(self, base):
         JavaCheckBase.__init__(self, base)
         self.text = """Package uses upstream build method (ant/maven/etc.)"""
-        self.url = 'https://fedoraproject.org/wiki/Packaging:Java'
+        self.url = 'https://docs.fedoraproject.org/en-US/packaging-guidelines/Java/'
         self.automatic = False
         self.type = 'SHOULD'
 
@@ -450,7 +450,7 @@ class CheckNoArch(JavaCheckBase):
     def __init__(self, base):
         JavaCheckBase.__init__(self, base)
         self.text = """Packages are noarch unless they use JNI"""
-        self.url = 'https://fedoraproject.org/wiki/Packaging:Java'
+        self.url = 'https://docs.fedoraproject.org/en-US/packaging-guidelines/Java/'
         self.automatic = True
         self.type = 'SHOULD'
 
@@ -475,7 +475,7 @@ class CheckNewStyleMaven(JavaCheckBase):
     def __init__(self, base):
         JavaCheckBase.__init__(self, base)
         self.text = """Maven packages should use new style packaging"""
-        self.url = 'https://fedoraproject.org/wiki/Packaging:Java#Apache_Maven'
+        self.url = 'https://docs.fedoraproject.org/en-US/java-packaging-howto/maven/'
         self.automatic = True
         self.type = 'MUST'
 
